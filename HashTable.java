@@ -21,7 +21,7 @@ import java.util.Random;
 		} else if (probeType == 1) {
 			// use doble hashing
 		}
-		size = 0; // use twin prime
+		size = 95791; // use twin prime
 		elementCount = 0;
 	}
 	

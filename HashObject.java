@@ -38,13 +38,12 @@
 	}
 	
 	@Override
-	public boolean equals(Object o) {
-		if (this == o)
+	public  boolean equals(Object other) {
+		if (other instanceof K) {
+			K o = (K) other;
+		}
 			return true;
-		if (!(o instanceof HashObject)) 
-			return false;
-		HashObject ho = (HashObject) o;
-		// return K.compare()
+		
 			
 			
 		return false;
