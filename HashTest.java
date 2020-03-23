@@ -34,7 +34,7 @@ import java.util.Random;
 		}
 		
 		for (int i = 95500; i < 96000; i ++) {
-			if (isPrime(i, 3)) {
+			if (isPrimeOlderTwin(i, 3)) {
 				System.out.print(i + ", ");
 				
 			
@@ -59,7 +59,6 @@ import java.util.Random;
 			int result = 0;
 			int cursor = 0;
 			int r = getRandomIntInRange(2, p - 1);
-			System.out.println(r);
 			for (int i = 0; i < binaryString.length(); i++) {
 				if (binaryString.charAt(i) == '1') {
 					result = r; // first 1
@@ -81,5 +80,11 @@ import java.util.Random;
 		
 	}
 	
+	public static boolean isPrimeOlderTwin(int p, int numTimesToCheck) {
+		if (isPrime(p, numTimesToCheck) && isPrime(p - 2, numTimesToCheck))
+			return true;
+		else
+			return false;
+	}
 	
 }
