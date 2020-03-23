@@ -33,7 +33,7 @@ import java.util.Random;
 			}
 		}
 		
-		for (int i = 95500; i < 96000; i ++) {
+		for (int i = 0; i < 96000; i ++) {
 			if (isPrimeOlderTwin(i, 3)) {
 				System.out.print(i + ", ");
 				
@@ -46,6 +46,7 @@ import java.util.Random;
 
 	public static int getRandomIntInRange(int min, int max) {
 		if (min >= max) {
+			System.out.println("max: " + max + ", min: " + min);
 			throw new IllegalArgumentException("max must be greater than min");
 		}
 		Random r = new Random();
@@ -81,6 +82,12 @@ import java.util.Random;
 	}
 	
 	public static boolean isPrimeOlderTwin(int p, int numTimesToCheck) {
+		if (p < 6) { // safeguard in case input is < 6
+			if (p == 5)
+				return true;
+			else
+				return false;
+		}
 		if (isPrime(p, numTimesToCheck) && isPrime(p - 2, numTimesToCheck))
 			return true;
 		else
