@@ -37,18 +37,18 @@
 		return probeCount;
 	}
 	
-	@Override
-	public  boolean equals(Object other) {
-		if (other instanceof K) {
-			K o = (K) other;
-		}
-			return true;
+	// @Override
+	// public  boolean equals(Object other) {
+	// 	if (other instanceof K) {
+	// 		K o = (K) other;
+	// 	}
+	// 		return true;
 		
 			
 			
-		return false;
+	// 	return false;
 		
-	}
+	// }
 	
 	@Override
 	public String toString() {
