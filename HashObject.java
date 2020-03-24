@@ -1,14 +1,16 @@
+import javax.print.attribute.standard.MediaSize.Other;
+
 /**
  * @author scottloveless
  */
  
- public class HashObject<K> {
+ public class HashObject<K> extends Object {
 	private K key;
 	private int duplicateCount;
 	private int probeCount;
 	
 	public HashObject(K k) {
-		K key = k;
+		key = k;
 		duplicateCount = 0;
 		probeCount = 0;
 	}
@@ -21,7 +23,7 @@
 		return key;
 	}
 	
-	public void increaseDuplicateCount() {
+	public void incrementDuplicateCount() {
 		duplicateCount++;
 	}
 	
@@ -29,7 +31,7 @@
 		return duplicateCount;
 	}
 	
-	public void increaseProbeCount() {
+	public void incrementProbeCount() {
 		probeCount++;
 	}
 	
@@ -37,18 +39,16 @@
 		return probeCount;
 	}
 	
-	// @Override
-	// public  boolean equals(Object other) {
-	// 	if (other instanceof K) {
-	// 		K o = (K) other;
-	// 	}
-	// 		return true;
-		
-			
-			
-	// 	return false;
-		
-	// }
+	@Override
+	public boolean equals(Object other) {		
+		if (this.hashCode() == other.hashCode()) {
+			return true;
+		}
+			// if (other instanceof HashObject<?>) {
+		// if ( ((HashObject<?>)other).key.equals(this.key) )
+		else 
+			return false;
+	}
 	
 	@Override
 	public String toString() {
